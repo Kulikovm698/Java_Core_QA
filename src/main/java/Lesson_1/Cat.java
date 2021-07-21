@@ -1,20 +1,50 @@
 package Lesson_1;
 
-public class Cat {
+public class Cat extends Animal {
 
-    public String name;
-    public String color;
-    public int age;
+    private  boolean isWild;
 
     public Cat(String name, String color, int age) {
-        if(age < 0){
-            System.out.println("Вы задаете отрицательный возраст коту!");
-        }else {
-            this.age = age;
-        }
+        super(name, color, age);
+
         this.name = name;
         this.color = color;
+    }
 
+    public boolean isWild() {
+        return isWild;
+    }
+
+    public void setWild(boolean wild) {
+        isWild = wild;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        if (age < 0) {
+            System.out.println("Некорректное значение");
+        } else {
+            this.age = age;
+        }
     }
 
     @Override
@@ -24,5 +54,24 @@ public class Cat {
                 ", color='" + color + '\'' +
                 ", age=" + age +
                 '}';
+    }
+
+    /**
+     Переоредили метод equals для сравнения строк (котов).
+     Без переопределения будет false:
+        public boolean equals(Object obj) {
+        return (this == obj);)
+     **/
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true; //Сравниваем ссылки (this - ссылка на cat2)
+        if (o == null || getClass() != o.getClass()) return false;
+        Cat cat = (Cat) o;
+        return age == cat.age && Objects.equals(name, cat.name) && Objects.equals(color, cat.color);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, color, age);
     }
 }
