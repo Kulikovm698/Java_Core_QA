@@ -1,22 +1,17 @@
 package Lesson_1;
 
-public class Cat extends Animal {
+import java.util.Objects;
 
-    private  boolean isWild;
+public class Cat extends Animal implements CanSwim {
+
+    private boolean isWild;
+    private double swimmingSpeed;
 
     public Cat(String name, String color, int age) {
         super(name, color, age);
 
         this.name = name;
         this.color = color;
-    }
-
-    public boolean isWild() {
-        return isWild;
-    }
-
-    public void setWild(boolean wild) {
-        isWild = wild;
     }
 
     public String getName() {
@@ -47,6 +42,23 @@ public class Cat extends Animal {
         }
     }
 
+    public boolean isWild() {
+        return isWild;
+    }
+
+    public void setWild(boolean wild) {
+        isWild = wild;
+    }
+
+    public double getSwimmingSpeed() {
+        return swimmingSpeed;
+    }
+
+    public void setSwimmingSpeed(double swimmingSpeed) {
+        this.swimmingSpeed = swimmingSpeed;
+    }
+
+
     @Override
     public String toString() {
         return "Cat{" +
@@ -57,10 +69,10 @@ public class Cat extends Animal {
     }
 
     /**
-     Переоредили метод equals для сравнения строк (котов).
-     Без переопределения будет false:
-        public boolean equals(Object obj) {
-        return (this == obj);)
+     * Переоредили метод equals для сравнения строк (котов).
+     * Без переопределения будет false:
+     * public boolean equals(Object obj) {
+     * return (this == obj);)
      **/
     @Override
     public boolean equals(Object o) {
@@ -74,4 +86,14 @@ public class Cat extends Animal {
     public int hashCode() {
         return Objects.hash(name, color, age);
     }
+
+    public void voice(){
+        System.out.println("Кот мяукает");
+    }
+
+    public double swim(Pool pool){
+        System.out.println(name +  " " + "плывет" + ":" +pool.getLength() / swimmingSpeed + "c" );
+        return pool.getLength() / swimmingSpeed;
+    }
+
 }
