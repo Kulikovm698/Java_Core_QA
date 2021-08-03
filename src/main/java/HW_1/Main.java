@@ -6,16 +6,15 @@ public class Main {
         Competing[] competings = {new Cat("Кот Барсик", 5, 10),
                 new Human("Борис", 1, 20),
                 new Robot("Робот Валли", 4, 40)};
-    }
-
-    Overcomeble[] overcomebles = {new Wall(1), new RoadRun(2)};
 
 
-    for(Competing competing : competings){ //никак не могу понять в чем ошибка в этой строчке???
-        for(Overcomeble overcomeble : overcomebles){
-            overcomeble.overcome(competing);
+        Overcomeble[] overcomebles = {new Wall(1), new RoadRun(2)};
+
+        for(Competing competing : competings){
+            for(Overcomeble overcomeble : overcomebles){
+                overcomeble.overcome(competing);
+            }
         }
     }
-
     }
 

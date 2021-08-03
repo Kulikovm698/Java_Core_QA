@@ -24,3 +24,4 @@ public class Cat extends Properties implements Competing {
         }
 
     }
+}
