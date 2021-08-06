@@ -19,7 +19,7 @@ public class Main {
     }
 
     public static void test() {
-        test();
+
         test1();
         System.out.println("Метод test");
     }
@@ -32,7 +32,7 @@ public class Main {
 
     public static void test2() {
 
-//        int a = 1 / 0;
+         int a = 1 / 0;
 
         StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
         for(StackTraceElement stackTraceElement : stackTraceElements){
