@@ -1,5 +1,9 @@
 package Lesson_1;
 
+/*
+Абстрактный класс - это описание некоторой сущности
+ */
+
 public abstract class Animal {
 
     protected String name;

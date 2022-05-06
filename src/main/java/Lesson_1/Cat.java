@@ -68,15 +68,16 @@ public class Cat extends Animal implements CanSwim {
                 '}';
     }
 
-    /**
+    /*
      * Переоредили метод equals для сравнения строк (котов).
      * Без переопределения будет false:
      * public boolean equals(Object obj) {
      * return (this == obj);)
-     **/
+     */
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true; //Сравниваем ссылки (this - ссылка на cat2)
+    public boolean equals(Object o) //сюда передали cat3)//
+     {
+        if (this == o) return true; //Сравниваем ссылки (this - ссылка на cat2, потому что у cat2 вызвали метод equals)
         if (o == null || getClass() != o.getClass()) return false;
         Cat cat = (Cat) o;
         return age == cat.age && Objects.equals(name, cat.name) && Objects.equals(color, cat.color);

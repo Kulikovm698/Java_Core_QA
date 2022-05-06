@@ -6,7 +6,7 @@ public class UncheckedException {
         int a = 1;
         int b = 0;
 
-/**
+/*
  * Так Unchecked не рекомендуется обрабатывать! Лучше сделать проверку!
         try{
             int c = a / b;

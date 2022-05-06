@@ -10,11 +10,11 @@ public class Main {
 
         Overcomeble[] overcomebles = {new Wall(1), new RoadRun(2)};
 
-        for(Competing competing : competings){
-            for(Overcomeble overcomeble : overcomebles){
+        for (Competing competing : competings) {
+            for (Overcomeble overcomeble : overcomebles) {
                 overcomeble.overcome(competing);
             }
         }
     }
-    }
+}
 

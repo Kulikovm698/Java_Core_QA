@@ -17,9 +17,7 @@ public class CalculateSquare {
 
             throw new OneOrBothRectangleSidesNegativeException("Одна из стороно отрицательная: " + sideA + ", " + sideB);
         }
-
         return sideA * sideB;
-
     }
 
 }
